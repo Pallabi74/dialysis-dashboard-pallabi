@@ -1,16 +1,65 @@
-# React + Vite
+# Dialysis Patient Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## How it works
+React frontend talks to FastAPI backend through HTTP calls. Data is hardcoded 
+for demo. Simple architecture:
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Setup (3 min)
+bash
+git clone https://github.com/YOUR_USERNAME/dialysis-dashboard-pallabi.git
+cd dialysis-dashboard-pallabi
 
-## React Compiler
+# Backend - Terminal 1
+pip install fastapi uvicorn
+uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# Frontend - Terminal 2  
+cd frontend
+npm install
+npm run dev
 
-## Expanding the ESLint configuration
+Visit http://localhost:5173
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+Data
+Two patients hardcoded:
+
+John Doe: 75→70kg, 120/80, 5L (Normal)
+
+Jane Smith: 80→74kg, 185/95, 6L (High BP alert)
+
+What I decided
+No database - demo only
+
+BP>140/90 = red alert (medical standard)
+
+Single unit A (unit B similar)
+
+Inline styles for speed
+
+Missing stuff
+No real database
+
+Manual refresh only
+
+One unit view
+
+No login
+
+Next time
+Add Postgres
+
+Unit selector
+
+Live updates
+
+Test API: http://localhost:8000/patients/A
+
+
+
+
+
+
+Pallabi
+March 1, 2026
